@@ -27,6 +27,7 @@
 #define TFT_RST 8
 
 #define TFT_BL 15
+#define TFT_BL_INVERTED false
 
 #define VIBRATION_PIN -1
 
@@ -54,14 +55,14 @@
  *      INCLUDES
  *********************/
 #include "displays/display_wrapper.hpp"
-#include "displays/panels/gc9a01_spi.hpp"
+#include "displays/panels/st7789_spi.hpp"
 #include "displays/touch/lovyan_cst816s.hpp"
 
 /*********************
  *      TYPEDEFS
  *********************/
 using BoardDisplay =
-    display::DisplayWrapper<GC9A01SpiPanel, LovyanCST816STouch>;
+    display::DisplayWrapper<ST7789SpiPanel, LovyanCST816STouch>;
 extern BoardDisplay tft;
 
 #include "boards/common.hpp"
