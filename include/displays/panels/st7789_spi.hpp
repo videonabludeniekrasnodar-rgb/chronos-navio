@@ -15,8 +15,9 @@ public:
 
   ST7789SpiPanel() {
     bus = new Arduino_ESP32SPIDMA(TFT_DC, TFT_CS, TFT_SCLK, TFT_MOSI, TFT_MISO, TFT_SPI_HOST);
-    gfx = new Arduino_ST7789(bus, TFT_RST, 0, false, SCREEN_WIDTH,
-                              SCREEN_HEIGHT);
+        gfx = new Arduino_ST7789(bus, TFT_RST, 0, true, SCREEN_WIDTH,
+                              SCREEN_HEIGHT, OFFSET_X, OFFSET_Y, OFFSET_X, OFFSET_Y);
+
 
     auto cfg = light.config();
     cfg.pin_bl = TFT_BL;
