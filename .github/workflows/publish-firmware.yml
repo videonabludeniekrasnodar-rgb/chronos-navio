@@ -20,11 +20,11 @@ jobs:
         run: python -m pip install platformio
 
       - name: Build firmware
-        run: pio run
+        run: pio run -e waveshare-s3-lcd-169
 
       - name: Save firmware files
         uses: actions/upload-artifact@v4
         with:
-          name: chronos-navio-binaries
+          name: waveshare-169-firmware
           path: |
-            .pio/build/*/*.bin
+            .pio/build/waveshare-s3-lcd-169/*.bin
